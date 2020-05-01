@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-kerby build MANIFEST-FILE... | kubectl apply -f .
+kerby build MANIFEST-FILE... | kubectl apply -f -
 
 ## Development
 
