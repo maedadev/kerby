@@ -1,6 +1,6 @@
 # Kerby
 
-Kerby is k8s manifest file supported by ERB.
+Kubernetes ERB support on Yaml manifest files.
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-kerby build <manifest-files> | kubectl apply -f .
+kerby build MANIFEST-FILE... | kubectl apply -f .
 
 ## Development
 
