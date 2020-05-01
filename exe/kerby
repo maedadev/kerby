@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+#
+# = NAME
+# kerby   - Kubernetes ERB support on Yaml manifest files.
+#
+# = SYNOPSIS
+# kerby [options]
+
+$LOAD_PATH.push(File.expand_path('../../lib/', __FILE__))
+
+require 'kerby/cli'
+Kerby::Cli.start
