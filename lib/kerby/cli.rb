@@ -81,5 +81,13 @@ module Kerby
         k8s_node_sub(hash[keys[0]] || {}, keys[1,keys.size-1].join('.'), prompt)
       end
     end
+
+    # k8s_include with YAML indent
+    def k8s_config_map(path)
+      "|\n" +
+      ERB.new(File.read(Pathname(@_curr_file).dirname + path)).result(binding).split("\n").map do |line|
+        "        " + line + "\n"
+      end.join('')
+    end
   end
 end
