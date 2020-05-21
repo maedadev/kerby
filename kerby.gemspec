@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Kubernetes ERB support on Yaml manifest files.}
   spec.description   = %q{Kubernetes ERB support on Yaml manifest files.}
-  spec.homepage      = "https://github.com/maedadev"
+  spec.homepage      = "https://github.com/maedadev/kerby"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.
