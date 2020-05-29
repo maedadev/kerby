@@ -22,10 +22,29 @@ Or install it yourself as:
 
     $ kerby build [--node-yaml=NODE_YAML] MANIFEST-FILE... | kubectl apply -f -
 
-## API
+## Description
 
-Any ruby method can be embedded in ERB manifest file, as wells as
-{Kerby::Cli Kerby supporting methods} are also able to be used.
+                       +----------+
+                       | node.yml |
+                       +----------+
+                            ↓
+    +--------------+     +-------+     +---------+
+    | manifest.yml | --> | kerby | --> | kubectl |
+    +--------------+     +-------+     +---------+
+
+Kerby is a preprocessor to parse input manifest.yml with ERB
+(embeded ruby code) and generate to stdout for 'kubectl' manifest file.
+
+'node.yml' is any type of parameter file to customize the manifest.yml.
+For example, environment dependent parameter can be extracted to node.yml
+to overwrite manifest.yml.
+
+### Document
+
+* [API Site](https://www.rubydoc.info/gems/kerby): Any ruby method can be embedded
+  in ERB manifest file, as wells as
+  {Kerby::Cli Kerby supporting methods} are also able to be used.
+* [Gem Site](https://rubygems.org/gems/kerby)
 
 ## Development
 
