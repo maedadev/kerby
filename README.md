@@ -22,6 +22,11 @@ Or install it yourself as:
 
     $ kerby build [--node-yaml=NODE_YAML] MANIFEST-FILE... | kubectl apply -f -
 
+## API
+
+Any ruby method can be embedded in ERB manifest file, as wells as
+{Kerby::Cli Kerby supporting methods} are also able to be used.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
