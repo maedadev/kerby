@@ -42,6 +42,13 @@ module Kerby
     private
 
     # k8s include directive
+    #
+    # For example, <%= k8s_include('base/namespace') %> in manifest file will
+    # include 'base/namespace.yml' file.
+    #
+    # The path is relative to the current (sometimes partial) manifest file.
+    #
+    # @!visibility public
     def k8s_include(path)
       ERB.new(File.read(Pathname(@_curr_file).dirname + (path + '.yml'))).result(binding)
     end
@@ -65,6 +72,20 @@ module Kerby
     end
 
     # return node_yaml value for the key.
+    #
+    # For example, command execution:
+    #
+    #   $ kerby build --node_yaml staging-node.yml manifest.yml
+    #
+    # and stageing-node.yml contains:
+    #
+    #   app:
+    #     namespace:  city-A
+    #
+    # Then, <%= k8s_node('app.namespace') %> in manifest.yml will be
+    # generated to 'city-A'.
+    #
+    # @!visibility public
     def k8s_node(key)
       k8s_node_sub(@_k8s_node, key, key)
     end
@@ -83,6 +104,8 @@ module Kerby
     end
 
     # k8s_include with YAML indent
+    #
+    # @!visibility public
     def k8s_config_map(path)
       "|\n" +
       ERB.new(File.read(Pathname(@_curr_file).dirname + path)).result(binding).split("\n").map do |line|
