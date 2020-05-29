@@ -73,11 +73,11 @@ module Kerby
 
     # return node_yaml value for the key.
     #
-    # For example, command execution:
+    # For example, when command execution is:
     #
     #   $ kerby build --node_yaml staging-node.yml manifest.yml
     #
-    # and stageing-node.yml contains:
+    # and staging-node.yml contains:
     #
     #   app:
     #     namespace:  city-A
