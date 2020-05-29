@@ -83,7 +83,7 @@ module Kerby
     #     namespace:  city-A
     #
     # Then, <%= k8s_node('app.namespace') %> in manifest.yml will be
-    # generated to 'city-A'.
+    # transformed to 'city-A'.
     #
     # @!visibility public
     def k8s_node(key)
