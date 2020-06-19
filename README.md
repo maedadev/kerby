@@ -26,11 +26,11 @@ Or install it yourself as:
 
                        +----------+
                        | node.yml |
-                       +----------+
+                       +----------/
                             ↓
     +--------------+     +-------+     +---------+
     | manifest.yml | --> | kerby | --> | kubectl |
-    +--------------+     +-------+     +---------+
+    +--------------/     +-------+     +---------+
 
 Kerby is a preprocessor to parse input manifest.yml with ERB
 (embeded ruby code) and generate to stdout for 'kubectl' manifest file.
